@@ -5,7 +5,7 @@
 int main()
 {
     printf("asd\n");
-    FILE *f = fopen("test.csv", "r");
+    FILE *f = fopen("inputs.csv", "r");
 
     Array *arr = readCsv(f);
     if (arr)

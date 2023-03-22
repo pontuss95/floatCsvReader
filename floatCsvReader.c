@@ -79,7 +79,7 @@ void shrinkArray(Array *arr, unsigned int nRows)
     {
         free(arr->Array[i]);
     }
-    arr->Array = realloc(arr->Array, nRows);
+    arr->Array = realloc(arr->Array, sizeof(double *)*nRows);
     arr->numRows = nRows;
 }
 
@@ -160,7 +160,8 @@ Array *readCsv(FILE *f)
             }
         }
     }
-    shrinkArray(arr, (rowNum + 1));
+
+   shrinkArray(arr, (rowNum + 1));
 
     return arr;
 }
